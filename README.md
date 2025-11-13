@@ -51,7 +51,7 @@ El proyecto sigue los principios de **Domain-Driven Design (DDD)** con una arqui
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone <url-repositorio>
+git clone https://github.com/jorgemarquez17/user-registration-api.git
 cd user-registration-api
 ```
 
