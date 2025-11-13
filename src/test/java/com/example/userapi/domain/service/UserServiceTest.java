@@ -102,7 +102,7 @@ class UserServiceTest {
         
         String invalidPassword = "weak";
         
-        when(userRepository.existsByEmail(anyString())).thenReturn(false);
+        //when(userRepository.existsByEmail(anyString())).thenReturn(false);
         
         // When & Then
         assertThrows(ValidationException.class, 
