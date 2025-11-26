@@ -194,6 +194,37 @@ http://localhost:8080/h2-console
 - **Username:** `sa`
 - **Password:** _(dejar vacío)_
 
+**NOTA: Solo si quieres que se persista la informacion en la Base de Datos, es necesario
+modificar el application.properties**
+```
+    #Descomentar
+    spring.datasource.url=jdbc:h2:file:/app/data/userdb
+    spring.jpa.hibernate.ddl-auto=update
+    
+    #Comentar
+    #spring.datasource.url=jdbc:h2:mem:userdb
+    #spring.jpa.hibernate.ddl-auto=create-drop
+
+```
+**Ejecutar con imagen docker, mas informacion en la seccion de abajo**
+
+## 🐳 Docker
+**DockerHubs**
+```
+https://hub.docker.com/r/jmarquezr17/user-resgistration-api
+```
+Una vez descargada ejecutar la imagen en docker:
+````
+#Pull image
+docker pull jmarquezr17/user-resgistration-api:latest
+
+#Build image
+docker build -t jmarquezr17/user-resgistration-api:latest .
+
+#Run image
+docker run -d -p 8080:8080 -v h2_data:/app/data --name user-registration jmarquezr17/user-resgistration-api:latest
+````
+
 ## 🧪 Pruebas
 
 ### Ejecutar todas las pruebas
